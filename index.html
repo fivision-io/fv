@@ -1,1082 +1,819 @@
 <!DOCTYPE html>
-<html lang="uk" class="scroll-smooth">
+<html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FIVISION LAB — AI &amp; Content Агенція · Сайти-вітрини та візуал</title>
-  <meta name="description" content="Візуал, контент і сайти-вітрини, що перетворюють перегляди на записи. Спеціальна пропозиція на сайт-вітрину під ключ — 3 100 ₴ замість 6 500 ₴." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#050506" />
+  <title>FIVISION LAB — AI &amp; Content Агенція · @fivision.lab</title>
+  <meta name="description" content="Візуал, контент і сайти-вітрини, які перетворюють перегляди на записи. Спеціальна пропозиція на сайт-вітрину під ключ — 3 100 ₴ замість 6 500 ₴." />
 
-  <!-- Google Fonts: Cormorant Garamond, Manrope & JetBrains Mono with full Cyrillic support -->
+  <!-- Editorial Typography: Cormorant Garamond, Manrope & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-            sans: ['Manrope', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            obsidian: '#0B0B0C',
-            obsidianElevated: '#121214',
-            alabaster: '#F3F0EA',
-            alabasterElevated: '#EAE5DC',
-            ink: '#111113',
-            champagne: '#DFD5C5',
-            stone: '#8A857C',
-          }
-        }
-      }
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
+    /* =========================================================================
+       1. HIGH-FASHION EDITORIAL DESIGN TOKENS
+    ========================================================================= */
     :root {
-      --bg-obsidian: #0B0B0C;
-      --bg-alabaster: #F3F0EA;
-      --text-alabaster: #F3F0EA;
-      --text-ink: #111113;
-      --accent-champagne: #DFD5C5;
-      --accent-stone: #8A857C;
-      --hairline-dark: rgba(243, 240, 234, 0.14);
-      --hairline-light: rgba(17, 17, 19, 0.12);
-    }
+      /* Pure Deep Black & Monochrome Card Surfaces */
+      --obsidian: #050506;
+      --obsidian-surface: #0B0B0D;
+      --obsidian-elevated: #121215;
+      --obsidian-border: #1E1E22;
+      --obsidian-border-strong: #2E2E35;
 
-    * {
-      box-sizing: border-box;
-    }
+      /* Unified Pure Black Surfaces for All Sections */
+      --alabaster: #050506;
+      --alabaster-surface: #0B0B0D;
+      --alabaster-border: #1E1E22;
+      --alabaster-border-strong: #2E2E35;
 
-    html, body {
-      max-width: 100%;
-      overflow-x: hidden;
-      background-color: var(--bg-obsidian);
-      color: var(--text-alabaster);
-      font-family: 'Manrope', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+      /* Crisp White Text & Subtle Champagne / Silver Accents */
+      --ivory: #FFFFFF;
+      --muted-gray: #B0ADA6;
+      --dim-gray: #73706A;
+      --ink: #FFFFFF;
+      --slate: #B0ADA6;
+      --champagne: #EAE4D7;
+      --champagne-bright: #FFFFFF;
+      --bronze: #C6BEB0;
 
-    /* Ultra-subtle tactile paper & film grain overlay */
-    .paper-grain {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 50;
-      opacity: 0.03;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='editorialNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23editorialNoise)'/%3E%3C/svg%3E");
+      /* Typography */
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+/* ... existing code ... -->
+    ::selection {
+      background-color: #FFFFFF;
+      color: #050506;
     }
-
-    /* Architectural 1px Hairline Utilities */
-    .hairline-dark-b {
-      border-bottom: 1px solid var(--hairline-dark);
-    }
-    .hairline-dark-t {
-      border-top: 1px solid var(--hairline-dark);
-    }
-    .hairline-dark-all {
-      border: 1px solid var(--hairline-dark);
-    }
-    .hairline-light-b {
-      border-bottom: 1px solid var(--hairline-light);
-    }
-    .hairline-light-t {
-      border-top: 1px solid var(--hairline-light);
-    }
-    .hairline-light-all {
-      border: 1px solid var(--hairline-light);
-    }
-
-    /* Editorial Display Tracking */
-    .display-tight {
-      letter-spacing: -0.03em;
-    }
-
-    /* Technical Micro-Label */
-    .micro-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      line-height: 1.4;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    /* Clean Architectural Strikethrough Price */
-    .editorial-strike {
+/* ... existing code ... -->
+    /* Pure deep black band styling */
+    .band-obsidian {
       position: relative;
-      display: inline-block;
-      color: var(--accent-stone);
+      background-color: var(--obsidian);
+      color: var(--ivory);
     }
-    .editorial-strike::after {
+
+    .band-alabaster {
+      position: relative;
+      background-color: var(--obsidian);
+      color: var(--ivory);
+    }
+
+    /* =========================================================================
+       3. TYPOGRAPHY & REUSABLE EDITORIAL COMPONENTS
+    ========================================================================= */
+    .eyebrow {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      line-height: 1.45;
+    }
+
+    .band-obsidian .eyebrow {
+      color: var(--bronze);
+    }
+
+    .band-alabaster .eyebrow {
+      color: var(--bronze);
+    }
+
+    .section-title {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: clamp(28px, 4.4vw, 46px);
+      line-height: 1.14;
+      letter-spacing: -0.025em;
+      margin-top: 12px;
+      color: var(--ivory);
+    }
+
+    .section-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.18em;
+      letter-spacing: -0.01em;
+    }
+
+    .band-obsidian .section-title em {
+      color: var(--champagne);
+    }
+
+    .band-alabaster .section-title em {
+      color: var(--champagne);
+    }
+/* ... existing code ... -->
+    /* =========================================================================
+       4. STICKY EDITORIAL HEADER
+    ========================================================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background-color: rgba(5, 5, 6, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--obsidian-border);
+    }
+/* ... existing code ... -->
+    .why-tab-trigger:hover {
+      color: var(--ivory);
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .why-tab-trigger.is-active {
+      color: var(--ivory);
+      font-weight: 600;
+      background-color: var(--obsidian-elevated);
+    }
+
+    .why-tab-trigger.is-active::after {
       content: '';
       position: absolute;
-      left: -2px;
-      right: -2px;
-      top: 52%;
-      height: 1px;
-      background-color: currentColor;
-      opacity: 0.85;
-    }
-
-    /* Primary & Secondary Editorial Buttons (Sharp 2px architectural corners, zero glow) */
-    .btn-alabaster {
-      background-color: #F3F0EA;
-      color: #0B0B0C;
-      border: 1px solid #F3F0EA;
-      border-radius: 2px;
-      transition: background-color 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease;
-    }
-    .btn-alabaster:hover {
-      background-color: transparent;
-      color: #F3F0EA;
-      border-color: rgba(243, 240, 234, 0.45);
-    }
-
-    .btn-ink {
-      background-color: #111113;
-      color: #F3F0EA;
-      border: 1px solid #111113;
-      border-radius: 2px;
-      transition: background-color 0.28s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .btn-ink:hover {
-      background-color: transparent;
-      color: #111113;
-    }
-
-    .btn-outline-dark {
-      background-color: transparent;
-      color: #F3F0EA;
-      border: 1px solid rgba(243, 240, 234, 0.24);
-      border-radius: 2px;
-      transition: border-color 0.28s ease, background-color 0.28s ease;
-    }
-    .btn-outline-dark:hover {
-      border-color: #DFD5C5;
-      background-color: rgba(243, 240, 234, 0.04);
-    }
-
-    /* Editorial Underline Tabs with Smooth Sliding Indicator */
-    .tab-strip {
-      position: relative;
-      display: flex;
-      overflow-x: auto;
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .tab-strip::-webkit-scrollbar {
-      display: none;
-    }
-
-    .tab-indicator-dark {
-      position: absolute;
-      bottom: 0;
       left: 0;
-      height: 2px;
-      background-color: #DFD5C5;
-      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), width 0.38s cubic-bezier(0.22, 1, 0.36, 1);
-      pointer-events: none;
-    }
-
-    .tab-indicator-light {
-      position: absolute;
+      right: 0;
       bottom: 0;
-      left: 0;
       height: 2px;
-      background-color: #111113;
-      transition: transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), width 0.38s cubic-bezier(0.22, 1, 0.36, 1);
-      pointer-events: none;
+      background-color: var(--ivory);
     }
-
-    .tab-btn-dark {
-      color: #8A857C;
-      white-space: nowrap;
-      transition: color 0.25s ease;
+/* ... existing code ... -->
+    .editorial-two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      border: 1px solid var(--obsidian-border-strong);
+      border-radius: var(--radius);
+      background-color: var(--obsidian-surface);
     }
-    .tab-btn-dark:hover {
-      color: #DFD5C5;
+/* ... existing code ... -->
+    .ba-box.is-after {
+      background-color: rgba(255, 255, 255, 0.03);
     }
-    .tab-btn-dark.is-active {
-      color: #F3F0EA;
-    }
-
-    .tab-btn-light {
-      color: #6E6A63;
-      white-space: nowrap;
-      transition: color 0.25s ease;
-    }
-    .tab-btn-light:hover {
-      color: #111113;
-    }
-    .tab-btn-light.is-active {
-      color: #111113;
-    }
-
-    /* Smooth Tab Panel Transition */
-    .editorial-panel {
-      display: none;
-      opacity: 0;
-    }
-    .editorial-panel.is-active {
-      display: block;
-      animation: panelEditorialReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-    }
-
-    @keyframes panelEditorialReveal {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Interactive Brief Selection Pills (Architectural 2px radius) */
-    .brief-pill {
-      border: 1px solid rgba(243, 240, 234, 0.16);
-      background-color: transparent;
-      color: #8A857C;
-      border-radius: 2px;
-      transition: all 0.24s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .brief-pill:hover {
-      border-color: rgba(243, 240, 234, 0.42);
-      color: #F3F0EA;
-    }
-    .brief-pill.is-selected {
-      border-color: #DFD5C5;
-      background-color: #F3F0EA;
-      color: #0B0B0C;
-    }
-
-    /* Gentle Scroll Reveal */
-    .reveal-block {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .reveal-block.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
-<body class="selection:bg-[#DFD5C5] selection:text-[#0B0B0C]">
-
-  <!-- Ultra-Subtle Tactile Paper Grain Overlay -->
-  <div class="paper-grain" aria-hidden="true"></div>
-
-  <!-- =========================================================================
-       MINIMALIST STICKY HEADER
-  ========================================================================== -->
-  <header class="sticky top-0 z-40 bg-[#0B0B0C]/90 backdrop-blur-md hairline-dark-b">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 h-16 sm:h-20 flex items-center justify-between gap-4">
-
-      <!-- Left: Geometric FL Monogram + FIVISION LAB -->
-      <a href="#" class="flex items-center gap-3.5 group focus:outline-none" aria-label="FIVISION LAB — На головну">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 hairline-dark-all rounded-[2px] flex items-center justify-center bg-[#121214] group-hover:border-[#DFD5C5]/60 transition-colors">
-          <!-- Crisp Architectural Interlocking FL Monogram SVG -->
-          <svg width="22" height="22" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- Vertical stem of F -->
-            <path d="M6.5 5.5V22.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-            <!-- Top bar of F -->
-            <path d="M6.5 5.5H18.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-            <!-- Middle crossbar of F -->
-            <path d="M6.5 13.5H15.5" stroke="#DFD5C5" stroke-width="1.65" stroke-linecap="square"/>
-            <!-- Interlocking L vertical stem -->
-            <path d="M13.5 9.5V22.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-            <!-- Base bar of L -->
-            <path d="M13.5 22.5H22.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
+/* ... existing code ... -->
+        <div class="monogram-box">
+          <!-- Custom Geometric FL Monogram with 4-Point Star -->
+          <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6.5 5.5V22.5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square" />
+            <path d="M6.5 5.5H18" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square" />
+            <path d="M6.5 13.5H14.5" stroke="#EAE4D7" stroke-width="1.6" stroke-linecap="square" />
+            <path d="M13.5 10V22.5" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square" />
+            <path d="M13.5 22.5H22" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="square" />
+            <path d="M21.5 4.5L22.3 7.2L25 8L22.3 8.8L21.5 11.5L20.7 8.8L18 8L20.7 7.2L21.5 4.5Z" fill="#C6BEB0" />
           </svg>
         </div>
-        <span class="font-sans font-semibold text-xs sm:text-[13px] tracking-[0.18em] uppercase text-[#F3F0EA]">
-          FIVISION LAB
-        </span>
+        <div class="brand-text">
+          <span class="brand-name">FIVISION LAB</span>
+          <span class="brand-sub">@fivision.lab</span>
+        </div>
       </a>
 
-      <!-- Center / Right: Anchor Links & @fivision.lab CTA -->
-      <div class="flex items-center gap-6 lg:gap-9">
-        <nav aria-label="Основна навігація" class="hidden md:flex items-center gap-8 text-[13px] font-normal text-[#8A857C]">
-          <a href="#why-us" class="hover:text-[#F3F0EA] transition-colors">Переваги</a>
-          <a href="#services" class="hover:text-[#F3F0EA] transition-colors">Послуги</a>
-          <a href="#agency" class="hover:text-[#F3F0EA] transition-colors">Агенція</a>
-          <a href="#brief" class="hover:text-[#F3F0EA] transition-colors">Заявка</a>
-        </nav>
+      <nav class="header-nav" aria-label="Навігація по сторінці">
+        <a href="#why" class="js-scroll-link">Чому ми</a>
+        <a href="#services" class="js-scroll-link">Послуги</a>
+        <a href="#approach" class="js-scroll-link">Підхід</a>
+        <a href="#order" class="js-scroll-link">Заявка</a>
+      </nav>
 
-        <a href="https://instagram.com/fivision.lab" target="_blank" rel="noopener noreferrer"
-           class="btn-outline-dark px-3.5 sm:px-4 py-2 font-mono text-[11px] tracking-[0.1em] text-[#DFD5C5]">
-          @fivision.lab
+      <div class="header-cta-group">
+        <a href="https://t.me/fiya_grid" target="_blank" rel="noopener noreferrer" class="header-pill-link is-featured">
+          TELEGRAM →
+        </a>
+        <a href="https://ig.me/m/fivision.lab" target="_blank" rel="noopener noreferrer" class="header-pill-link">
+          DIRECT →
         </a>
       </div>
-
     </div>
   </header>
 
-  <main>
+  <main id="top">
 
-    <!-- =========================================================================
-         HERO SECTION (DEEP OBSIDIAN #0B0B0C)
-    ========================================================================== -->
-    <section class="pt-14 pb-20 sm:pt-24 sm:pb-28 lg:pt-28 lg:pb-32 px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto">
+    <!-- =====================================================================
+         2. HERO SECTION (OBSIDIAN #0B0B0C)
+    ====================================================================== -->
+    <section class="hero-section band-obsidian">
+      <div class="container hero-grid">
 
-      <!-- Micro-Tag -->
-      <div class="mb-7 sm:mb-9">
-        <span class="micro-label text-[#8A857C] block">
-          AI &amp; CONTENT АГЕНЦІЯ • @FIVISION.LAB
-        </span>
-      </div>
-
-      <!-- Large Editorial Headline mixing Manrope & Italic Cormorant Garamond -->
-      <h1 class="font-sans font-medium display-tight text-[33px] leading-[1.12] sm:text-[54px] sm:leading-[1.08] lg:text-[68px] lg:leading-[1.05] text-[#F3F0EA] max-w-5xl">
-        Візуал, контент і сайти-вітрини, що перетворюють перегляди
-        <span class="font-serif italic font-normal text-[40px] sm:text-[64px] lg:text-[80px] text-[#DFD5C5] tracking-normal inline-block">
-          на записи.
-        </span>
-      </h1>
-
-      <!-- Editorial Subtitle -->
-      <p class="mt-6 sm:mt-8 text-[15px] sm:text-lg lg:text-[19px] font-light text-[#8A857C] leading-[1.68] max-w-2xl">
-        Для локального бізнесу, б’юті-індустрії та експертів. Менше нескінченних переписок у Direct — більше клієнтів, готових обрати вашу послугу.
-      </p>
-
-      <!-- Architectural Pricing Offer Block (Split Hairline Table/Row) -->
-      <div class="mt-12 sm:mt-16 hairline-dark-t hairline-dark-b py-8 sm:py-10">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start lg:items-center">
-
-          <!-- Left Column: Offer Label & Price Display -->
-          <div class="lg:col-span-7 space-y-3 sm:space-y-4">
-            <div class="micro-label text-[#DFD5C5]">
-              СПЕЦІАЛЬНА ПРОПОЗИЦІЯ • САЙТ-ВІТРИНА ПІД КЛЮЧ
-            </div>
-
-            <div class="flex flex-wrap items-baseline gap-5 sm:gap-7">
-              <span class="editorial-strike font-serif text-2xl sm:text-3xl lg:text-[34px] font-normal">
-                6 500 ₴
-              </span>
-              <span class="font-serif font-medium text-[46px] leading-none sm:text-[60px] lg:text-[68px] text-[#F3F0EA] tracking-[-0.02em]">
-                3 100 ₴
-              </span>
-            </div>
-
-            <p class="font-mono text-[11px] sm:text-xs tracking-[0.06em] text-[#8A857C] pt-1">
-              Повноцінний запуск за 3–4 дні • Кількість місць за цією ціною обмежена
-            </p>
-          </div>
-
-          <!-- Right Column: Primary & Secondary Actions -->
-          <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch sm:items-center lg:justify-end gap-3.5">
-            <a href="#brief"
-               data-select-package="Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)"
-               class="package-jump-trigger btn-alabaster px-7 py-4 text-[13px] font-semibold tracking-[0.03em] text-center">
-              Замовити сайт за 3 100 ₴
-            </a>
-            <a href="#why-us"
-               class="px-5 py-4 text-[13px] font-normal text-[#8A857C] hover:text-[#F3F0EA] transition-colors text-center">
-              Чому обирають нас ↓
-            </a>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Subtle Editorial Index Row -->
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-xs">
-        <div class="flex items-baseline justify-between sm:block border-b sm:border-b-0 border-white/[0.08] pb-3 sm:pb-0">
-          <span class="micro-label text-[#8A857C] block">ТЕРМІН РЕАЛІЗАЦІЇ</span>
-          <span class="font-serif italic text-xl sm:text-2xl text-[#DFD5C5] mt-1 block">3–4 робочі дні</span>
-        </div>
-        <div class="flex items-baseline justify-between sm:block border-b sm:border-b-0 border-white/[0.08] pb-3 sm:pb-0">
-          <span class="micro-label text-[#8A857C] block">ФОКУС РОЗРОБКИ</span>
-          <span class="font-serif italic text-xl sm:text-2xl text-[#DFD5C5] mt-1 block">Мобільний трафік з Instagram</span>
-        </div>
-        <div class="flex items-baseline justify-between sm:block">
-          <span class="micro-label text-[#8A857C] block">РЕЗУЛЬТАТ ДЛЯ БРЕНДУ</span>
-          <span class="font-serif italic text-xl sm:text-2xl text-[#DFD5C5] mt-1 block">Запис без зайвих діалогів</span>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- =========================================================================
-         SECTION 01: ЧОМУ ЙДУТЬ ДО НАС (INTERACTIVE EDITORIAL TABS ON OBSIDIAN)
-    ========================================================================== -->
-    <section id="why-us" class="reveal-block py-20 sm:py-28 lg:py-32 px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto hairline-dark-t">
-
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
         <div>
-          <span class="micro-label text-[#DFD5C5] block mb-3">
-            01 / ЧОМУ ЙДУТЬ ДО НАС
-          </span>
-          <h2 class="font-sans font-medium display-tight text-2xl sm:text-4xl lg:text-[42px] text-[#F3F0EA] leading-[1.15]">
-            Архітектура довіри <span class="font-serif italic font-normal text-[#DFD5C5]">та конверсії</span>
-          </h2>
-        </div>
-        <p class="text-xs sm:text-sm text-[#8A857C] max-w-sm leading-relaxed">
-          Оберіть напрямок нижче, щоб побачити, як системний візуал та сайт-вітрина змінюють потік клієнтів.
-        </p>
-      </div>
+          <span class="eyebrow">AI &amp; CONTENT STUDIO — УКРАЇНА • ONLINE</span>
 
-      <!-- Smooth Animated Underline Tab Bar -->
-      <div class="hairline-dark-b mb-10 sm:mb-12">
-        <div id="why-tabstrip" role="tablist" aria-label="Чому обирають FIVISION LAB" class="tab-strip gap-7 sm:gap-11">
-          <div id="why-indicator" class="tab-indicator-dark" aria-hidden="true"></div>
+          <h1 class="hero-title">
+            Візуал, контент і сайти-вітрини, <em>які перетворюють перегляди на записи.</em>
+          </h1>
 
-          <button type="button" role="tab" aria-selected="true" data-target="why-panel-1"
-                  class="why-tab-btn tab-btn-dark is-active pb-4 font-mono text-xs tracking-[0.12em] uppercase">
-            01 / Конверсія
-          </button>
-          <button type="button" role="tab" aria-selected="false" data-target="why-panel-2"
-                  class="why-tab-btn tab-btn-dark pb-4 font-mono text-xs tracking-[0.12em] uppercase">
-            02 / Естетика
-          </button>
-          <button type="button" role="tab" aria-selected="false" data-target="why-panel-3"
-                  class="why-tab-btn tab-btn-dark pb-4 font-mono text-xs tracking-[0.12em] uppercase">
-            03 / AI-підхід
-          </button>
-          <button type="button" role="tab" aria-selected="false" data-target="why-panel-4"
-                  class="why-tab-btn tab-btn-dark pb-4 font-mono text-xs tracking-[0.12em] uppercase">
-            04 / Швидкість
-          </button>
-        </div>
-      </div>
+          <p class="hero-sub">
+            Менше нескінченних переписок у Direct — більше клієнтів, які вже знають цінність ваших послуг і готові записатися.
+          </p>
 
-      <!-- Tab Panels Container -->
-      <div>
+          <div class="hero-actions">
+            <a href="#order" class="btn-primary js-scroll-link">
+              Обговорити проєкт →
+            </a>
+            <a href="#why" class="btn-secondary js-scroll-link">
+              Чому обирають нас
+            </a>
+          </div>
 
-        <!-- TAB 01: Конверсія -->
-        <div id="why-panel-1" class="why-tab-panel editorial-panel is-active">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-
-            <div class="lg:col-span-5 space-y-5">
-              <span class="micro-label text-[#8A857C]">АРГУМЕНТ 01 • СИСТЕМА ЗАПИСІВ</span>
-              <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl text-[#F3F0EA] leading-[1.2]">
-                Клієнт приходить уже готовим до запису
-              </h3>
-              <p class="text-sm sm:text-[15px] font-light text-[#8A857C] leading-[1.75]">
-                Більшість потенційних клієнтів закривають профіль, коли змушені писати «яка ціна?» і годинами чекати відповідь у Direct. Сайт-вітрина за 20 секунд структурує послуги, прозорий прайс, реальні тригери довіри та веде на бронювання в один дотик.
-              </p>
+          <div class="hero-meta-strip">
+            <div>
+              <div class="meta-caption">Термін запуску</div>
+              <div class="meta-val">3–5 робочих днів</div>
             </div>
-
-            <!-- Clean 2-Column Architectural Comparison -->
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 hairline-dark-all">
-              <!-- Column 1: Без сайту-вітрини -->
-              <div class="p-6 sm:p-8 border-b sm:border-b-0 sm:border-r border-[rgba(243,240,234,0.14)] space-y-5">
-                <div class="micro-label text-[#8A857C]">БЕЗ САЙТУ-ВІТРИНИ</div>
-                <ul class="space-y-4 text-xs sm:text-[13.5px] text-[#8A857C] leading-relaxed">
-                  <li class="pt-3 hairline-dark-t">
-                    Десятки однотипних діалогів про вартість, тривалість та адресу щодня
-                  </li>
-                  <li class="pt-3 hairline-dark-t">
-                    Втрата теплих клієнтів, які не дочекалися відповіді ввечері або у вихідний
-                  </li>
-                  <li class="pt-3 hairline-dark-t">
-                    Хаотичний список посилань у шапці профілю, який знижує довіру
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Column 2: З рішенням FIVISION LAB -->
-              <div class="p-6 sm:p-8 bg-[#121214] space-y-5">
-                <div class="micro-label text-[#DFD5C5]">З РІШЕННЯМ FIVISION LAB</div>
-                <ul class="space-y-4 text-xs sm:text-[13.5px] text-[#F3F0EA] leading-relaxed">
-                  <li class="pt-3 hairline-dark-t">
-                    Клієнт сам знайомиться з послугами, цінами та підходом ще до першого контакту
-                  </li>
-                  <li class="pt-3 hairline-dark-t">
-                    Запис у Telegram, Direct або CRM працює 24/7 без вашої постійної участі в переписці
-                  </li>
-                  <li class="pt-3 hairline-dark-t">
-                    Цілісна вітрина бренду, яка перетворює перегляди сторіс на підтверджені візити
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <div class="meta-caption">Канали зв’язку</div>
+              <div class="meta-val">Telegram та Instagram Direct</div>
             </div>
-
           </div>
         </div>
 
-        <!-- TAB 02: Естетика -->
-        <div id="why-panel-2" class="why-tab-panel editorial-panel">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <!-- Special Offer Pricing Card -->
+        <aside class="offer-card" aria-label="Спеціальна пропозиція">
+          <span class="eyebrow">СПЕЦІАЛЬНА ПРОПОЗИЦІЯ • ОБМЕЖЕНА КІЛЬКІСТЬ МІСЦЬ</span>
+          <h2 class="offer-card-title">Сайт-вітрина під ключ</h2>
 
-            <div class="lg:col-span-5 space-y-5">
-              <span class="micro-label text-[#8A857C]">АРГУМЕНТ 02 • ВІЗУАЛЬНИЙ КАПІТАЛ</span>
-              <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl text-[#F3F0EA] leading-[1.2]">
-                Візуал, який піднімає цінність бренду
-              </h3>
-              <p class="text-sm sm:text-[15px] font-light text-[#8A857C] leading-[1.75]">
-                Клієнт оцінює рівень сервісу за перші 3 секунди контакту зі сторінкою. Продумана типографіка, чиста композиція та журнальна візуальна ієрархія дозволяють бізнесу впевнено піднімати середній чек без демпінгу та знижок.
-              </p>
-            </div>
-
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 hairline-dark-all">
-              <div class="p-6 sm:p-7 border-b sm:border-b-0 sm:border-r border-[rgba(243,240,234,0.14)] space-y-3">
-                <span class="font-serif italic text-2xl text-[#DFD5C5]">I.</span>
-                <h4 class="font-sans font-medium text-sm text-[#F3F0EA]">Перше враження</h4>
-                <p class="text-xs text-[#8A857C] leading-relaxed">
-                  Преміальна подача миттєво відокремлює вас від конкурентів із шаблонними сторінками.
-                </p>
-              </div>
-              <div class="p-6 sm:p-7 border-b sm:border-b-0 sm:border-r border-[rgba(243,240,234,0.14)] space-y-3">
-                <span class="font-serif italic text-2xl text-[#DFD5C5]">II.</span>
-                <h4 class="font-sans font-medium text-sm text-[#F3F0EA]">Вищий середній чек</h4>
-                <p class="text-xs text-[#8A857C] leading-relaxed">
-                  Коли упаковка відповідає якості роботи, клієнт не торгується, а обирає ваш рівень.
-                </p>
-              </div>
-              <div class="p-6 sm:p-7 space-y-3">
-                <span class="font-serif italic text-2xl text-[#DFD5C5]">III.</span>
-                <h4 class="font-sans font-medium text-sm text-[#F3F0EA]">Єдиний стиль</h4>
-                <p class="text-xs text-[#8A857C] leading-relaxed">
-                  Instagram-стрічка, актуальні сторіс та сайт-вітрина звучать як один цілісний бренд.
-                </p>
-              </div>
-            </div>
-
+          <div class="offer-price-row">
+            <span class="price-old">6 500 ₴</span>
+            <span class="price-new">3 100 ₴</span>
+            <span class="discount-tag">−52% ЗАРАЗ</span>
           </div>
-        </div>
 
-        <!-- TAB 03: AI-підхід -->
-        <div id="why-panel-3" class="why-tab-panel editorial-panel">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <ul class="offer-list">
+            <li><span>01 /</span> Індивідуальний редакційний дизайн у стилі вашого бренду</li>
+            <li><span>02 /</span> Адаптація під трафік з Instagram та зручний запис у Telegram і Direct</li>
+            <li><span>03 /</span> Повний запуск під ключ за 3–5 днів без технічної рутини</li>
+          </ul>
 
-            <div class="lg:col-span-5 space-y-5">
-              <span class="micro-label text-[#8A857C]">АРГУМЕНТ 03 • AI &amp; ART DIRECTION</span>
-              <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl text-[#F3F0EA] leading-[1.2]">
-                AI-генерація та контент без шаблонності
-              </h3>
-              <p class="text-sm sm:text-[15px] font-light text-[#8A857C] leading-[1.75]">
-                Ми поєднуємо генеративні AI-інструменти з живим арт-дирекшном. Ви отримуєте візуальні матеріали рівня фешн-зйомки, обкладинки Reels та фірмові бренд-асети швидше й чистіше, ніж під час класичних продакшнів.
-              </p>
-            </div>
-
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 hairline-dark-all">
-              <div class="p-6 sm:p-8 border-b sm:border-b-0 sm:border-r border-[rgba(243,240,234,0.14)] space-y-3">
-                <div class="micro-label text-[#DFD5C5]">АВТОРСЬКИЙ АРТ-ДИРЕКШН</div>
-                <h4 class="font-sans font-medium text-base text-[#F3F0EA]">Індивідуальна візуальна ДНК</h4>
-                <p class="text-xs sm:text-[13.5px] text-[#8A857C] leading-relaxed">
-                  Ніяких стокових картинок чи однакових пресетів. Кожен кадр, шрифт і відступ підбираються під характер вашої аудиторії.
-                </p>
-              </div>
-              <div class="p-6 sm:p-8 bg-[#121214] space-y-3">
-                <div class="micro-label text-[#DFD5C5]">КОНТЕНТ-АРХІТЕКТУРА</div>
-                <h4 class="font-sans font-medium text-base text-[#F3F0EA]">Сенси, які продають нативно</h4>
-                <p class="text-xs sm:text-[13.5px] text-[#8A857C] leading-relaxed">
-                  Створюємо обкладинки Reels, хайлайтс та текстові акценти, що органічно переводять глядача на сайт-вітрину.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- TAB 04: Швидкість -->
-        <div id="why-panel-4" class="why-tab-panel editorial-panel">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-
-            <div class="lg:col-span-5 space-y-5">
-              <span class="micro-label text-[#8A857C]">АРГУМЕНТ 04 • ПРОЗОРИЙ ПРОЦЕС</span>
-              <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl text-[#F3F0EA] leading-[1.2]">
-                Запуск системи за 4 дні без бюрократії
-              </h3>
-              <p class="text-sm sm:text-[15px] font-light text-[#8A857C] leading-[1.75]">
-                Жодних брифів на 40 сторінок і місяців очікування. Ми вибудували чіткий процес: коротка розмова про ваш бізнес, швидке прототипування та готове посилання для шапки профілю в Instagram за лічені дні.
-              </p>
-            </div>
-
-            <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 hairline-dark-all">
-              <div class="p-6 sm:p-7 border-b sm:border-b-0 sm:border-r border-[rgba(243,240,234,0.14)] space-y-2.5">
-                <span class="micro-label text-[#DFD5C5]">ДЕНЬ 01</span>
-                <h4 class="font-sans font-medium text-sm text-[#F3F0EA]">Структура та сенси</h4>
-                <p class="text-xs text-[#8A857C] leading-relaxed">
-                  Аналізуємо профіль, фіксуємо прайс, акценти та логіку запису клієнта.
-                </p>
-              </div>
-              <div class="p-6 sm:p-7 border-b sm:border-b-0 sm:border-r border-[rgba(243,240,234,0.14)] space-y-2.5">
-                <span class="micro-label text-[#DFD5C5]">ДЕНЬ 02–03</span>
-                <h4 class="font-sans font-medium text-sm text-[#F3F0EA]">Дизайн і верстка</h4>
-                <p class="text-xs text-[#8A857C] leading-relaxed">
-                  Збираємо мобільний сайт-вітрину з бездоганною типографікою та швидкістю.
-                </p>
-              </div>
-              <div class="p-6 sm:p-7 space-y-2.5">
-                <span class="micro-label text-[#DFD5C5]">ДЕНЬ 04</span>
-                <h4 class="font-sans font-medium text-sm text-[#F3F0EA]">Фінальний реліз</h4>
-                <p class="text-xs text-[#8A857C] leading-relaxed">
-                  Підключаємо кнопки запису та встановлюємо готовий сайт у ваш Instagram.
-                </p>
-              </div>
-            </div>
-
-          </div>
-        </div>
+          <a href="#order"
+             data-select-service="Сайт-вітрина — 3 100 ₴"
+             class="btn-primary js-select-service"
+             style="width: 100%;">
+            Забронювати місце за 3 100 ₴ →
+          </a>
+        </aside>
 
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 02: ПОСЛУГИ ТА ФОРМАТИ (WARM ALABASTER #F3F0EA EDITORIAL PAPER)
-    ========================================================================== -->
-    <section id="services" class="bg-[#F3F0EA] text-[#111113] py-20 sm:py-28 lg:py-32 px-5 sm:px-8 lg:px-12">
-      <div class="max-w-6xl mx-auto reveal-block">
+    <!-- =====================================================================
+         3. SECTION 01: INTERACTIVE TABS "ЧОМУ ЙДУТЬ ДО НАС" (ALABASTER)
+    ====================================================================== -->
+    <section id="why" class="band-alabaster section-block">
+      <div class="container">
 
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 sm:mb-14">
+        <div class="section-header">
           <div>
-            <span class="micro-label text-[#6E6A63] block mb-3">
-              02 / ПОСЛУГИ ТА ФОРМАТИ
-            </span>
-            <h2 class="font-sans font-medium display-tight text-2xl sm:text-4xl lg:text-[42px] text-[#111113] leading-[1.15]">
-              Формати співпраці <span class="font-serif italic font-normal">під ваші задачі</span>
+            <span class="eyebrow">01 / ЧОМУ ЙДУТЬ ДО НАС</span>
+            <h2 class="section-title">
+              Архітектура довіри, <em>яка працює за вас</em>
             </h2>
           </div>
-          <p class="text-xs sm:text-sm text-[#57534C] max-w-sm leading-relaxed">
-            Перемикайте вкладки, щоб переглянути склад кожного пакета та актуальну вартість.
+          <p class="section-lead">
+            Оберіть вкладку, щоб побачити, як продумана вітрина та візуальна система змінюють шлях клієнта від перегляду профілю до запису.
           </p>
         </div>
 
-        <!-- Light Paper Underline Tab Bar -->
-        <div class="hairline-light-b mb-10 sm:mb-12">
-          <div id="services-tabstrip" role="tablist" aria-label="Послуги та формати" class="tab-strip gap-7 sm:gap-11">
-            <div id="services-indicator" class="tab-indicator-light" aria-hidden="true"></div>
+        <!-- 4 Interactive Tabs -->
+        <div class="why-tabs-bar" role="tablist" aria-label="Переваги FIVISION LAB">
+          <button type="button" role="tab" aria-selected="true" data-why-target="why-pane-1" class="why-tab-trigger is-active">
+            <span class="tab-num">01</span>
+            <span>Менше переписок</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-why-target="why-pane-2" class="why-tab-trigger">
+            <span class="tab-num">02</span>
+            <span>Дорожчий візуал</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-why-target="why-pane-3" class="why-tab-trigger">
+            <span class="tab-num">03</span>
+            <span>AI + Дизайн</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-why-target="why-pane-4" class="why-tab-trigger">
+            <span class="tab-num">04</span>
+            <span>Швидкий запуск</span>
+          </button>
+        </div>
 
-            <button type="button" role="tab" aria-selected="true" data-target="srv-panel-1"
-                    class="srv-tab-btn tab-btn-light is-active pb-4 font-sans text-xs sm:text-sm font-semibold tracking-[0.02em]">
-              Сайт-вітрина
-            </button>
-            <button type="button" role="tab" aria-selected="false" data-target="srv-panel-2"
-                    class="srv-tab-btn tab-btn-light pb-4 font-sans text-xs sm:text-sm font-semibold tracking-[0.02em]">
-              AI &amp; Visual Контент
-            </button>
-            <button type="button" role="tab" aria-selected="false" data-target="srv-panel-3"
-                    class="srv-tab-btn tab-btn-light pb-4 font-sans text-xs sm:text-sm font-semibold tracking-[0.02em]">
-              Комплекс Brand + Web
-            </button>
+        <!-- Tab Pane 1: Менше переписок -->
+        <div id="why-pane-1" class="tab-pane is-active" role="tabpanel">
+          <div class="editorial-two-col">
+            <div class="col-primary">
+              <div>
+                <div class="big-index">01</div>
+                <h3 class="col-heading">Менше переписок — більше усвідомлених записів</h3>
+                <p class="col-copy">
+                  Структурований сайт-вітрина у шапці профілю відповідає на запитання про вартість, склад послуг, формати та приклади робіт ще до того, як клієнт відкриє діалог. Це скорочує кількість порожніх переписок до 70% і економить години вашого часу щотижня.
+                </p>
+              </div>
+              <div class="metric-footer">
+                <span class="eyebrow">РЕЗУЛЬТАТ ДЛЯ БІЗНЕСУ</span>
+                <div class="metric-headline">До −70% однотипних запитань «яка ціна?» у Direct</div>
+              </div>
+            </div>
+
+            <div class="col-secondary">
+              <div class="before-after-grid">
+                <div class="ba-box">
+                  <span class="ba-label">ДО: ХАОС У ДІАЛОГАХ</span>
+                  <p>Десятки повідомлень без запису, довге пояснення умов вручну та втрата клієнтів, поки ви на роботі.</p>
+                </div>
+                <div class="ba-box is-after">
+                  <span class="ba-label">ПІСЛЯ: СИСТЕМА ВІТРИНИ</span>
+                  <p>Клієнт за 40 секунд вивчає пропозицію на сайті та надсилає вам готовий запит у Telegram або Direct.</p>
+                </div>
+              </div>
+
+              <div class="light-point">
+                <span class="point-idx">01 /</span>
+                <div>
+                  <h4 class="point-title">Вітрина працює 24/7</h4>
+                  <p class="point-desc">Навіть уночі чи під час процедур відвідувач отримує повну презентацію вашого сервісу.</p>
+                </div>
+              </div>
+
+              <div class="light-point">
+                <span class="point-idx">02 /</span>
+                <div>
+                  <h4 class="point-title">Теплі звернення без зайвого прогріву</h4>
+                  <p class="point-desc">До вас пишуть люди, які вже погодилися з ціною та готові обрати зручну дату.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Service Tab Panels -->
-        <div>
-
-          <!-- SERVICE TAB 1: Сайт-вітрина (Default Active) -->
-          <div id="srv-panel-1" class="srv-tab-panel editorial-panel is-active">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-
-              <!-- Left Column: Title, Strikethrough 6 500 ₴ -> 3 100 ₴ & CTA -->
-              <div class="lg:col-span-5 space-y-6">
-                <span class="micro-label text-[#6E6A63]">ФОРМАТ 01 • СПЕЦІАЛЬНА ПРОПОЗИЦІЯ</span>
-
-                <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl lg:text-[34px] text-[#111113] leading-[1.18]">
-                  Сайт-вітрина для бізнесу та майстрів
-                </h3>
-
-                <div class="pt-4 pb-6 hairline-light-t hairline-light-b space-y-2">
-                  <div class="flex flex-wrap items-baseline gap-4 sm:gap-5">
-                    <span class="editorial-strike font-serif text-2xl sm:text-3xl">
-                      6 500 ₴
-                    </span>
-                    <span class="font-serif font-medium text-[44px] sm:text-[54px] leading-none text-[#111113]">
-                      3 100 ₴
-                    </span>
-                  </div>
-                  <div class="micro-label text-[#57534C] pt-1">
-                    Актуальна ціна зараз
-                  </div>
-                </div>
-
-                <p class="text-xs sm:text-sm text-[#57534C] leading-relaxed">
-                  Фіксована вартість розробки під ключ без прихованих платежів. Ідеально для посилання в шапці Instagram.
+        <!-- Tab Pane 2: Дорожчий візуал -->
+        <div id="why-pane-2" class="tab-pane" role="tabpanel">
+          <div class="editorial-two-col">
+            <div class="col-primary">
+              <div>
+                <div class="big-index">02</div>
+                <h3 class="col-heading">Дорожчий візуал, який дозволяє піднімати чек без виправдань</h3>
+                <p class="col-copy">
+                  Цілісна типографіка, редакційний арт-дирекшн та вивірена візуальна подача формують статус бренду з першої секунди. Майстри та локальні проєкти перестають конкурувати низькою ціною, адже рівень сервісу зчитується візуально.
                 </p>
+              </div>
+              <div class="metric-footer">
+                <span class="eyebrow">РЕЗУЛЬТАТ ДЛЯ БІЗНЕСУ</span>
+                <div class="metric-headline">Впевнене зростання середнього чеку та довіри аудиторії</div>
+              </div>
+            </div>
 
-                <div class="pt-1">
-                  <a href="#brief"
-                     data-select-package="Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)"
-                     class="package-jump-trigger btn-ink inline-block w-full sm:w-auto px-8 py-4 text-[13px] font-semibold tracking-[0.03em] text-center">
-                    Обрати сайт за 3 100 ₴
-                  </a>
+            <div class="col-secondary">
+              <div class="before-after-grid">
+                <div class="ba-box">
+                  <span class="ba-label">ДО: ШАБЛОННА ПОДАЧА</span>
+                  <p>Різнобій у шрифтах і кольорах змушує клієнта порівнювати вас виключно за прайсом конкурентів.</p>
+                </div>
+                <div class="ba-box is-after">
+                  <span class="ba-label">ПІСЛЯ: РЕДАКЦІЙНИЙ СТИЛЬ</span>
+                  <p>Архітектурна чистота й естетика преміум-видання одразу обґрунтовують вашу експертність і ціну.</p>
                 </div>
               </div>
 
-              <!-- Right Column: Clean Hairline Checklist of 6 Deliverables -->
-              <div class="lg:col-span-7">
-                <div class="micro-label text-[#6E6A63] mb-4">
-                  ЩО ВХОДИТЬ У РЕАЛІЗАЦІЮ (06 ПУНКТІВ)
+              <div class="light-point">
+                <span class="point-idx">01 /</span>
+                <div>
+                  <h4 class="point-title">Єдина візуальна мова бренду</h4>
+                  <p class="point-desc">Стрічка Instagram, актуальні сторіс і сайт-вітрина виглядають як один продуманий проєкт.</p>
                 </div>
-
-                <ul class="hairline-light-t">
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">01</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Індивідуальний дизайн під естетику бренду
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">02</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Зрозумілий прайс і структура послуг
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">03</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Блок переваг та відповідей на часті запитання
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">04</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Прямі кнопки запису в Instagram / Telegram / месенджери
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">05</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Ідеальна адаптація під iPhone та Android
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">06</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Підключення та запуск за 3–4 дні
-                    </span>
-                  </li>
-                </ul>
               </div>
 
+              <div class="light-point">
+                <span class="point-idx">02 /</span>
+                <div>
+                  <h4 class="point-title">Перше враження за 7 секунд</h4>
+                  <p class="point-desc">Новий підписник миттєво бачить порядок, смак і повагу до деталей.</p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- SERVICE TAB 2: AI & Visual Контент -->
-          <div id="srv-panel-2" class="srv-tab-panel editorial-panel">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-
-              <div class="lg:col-span-5 space-y-6">
-                <span class="micro-label text-[#6E6A63]">ФОРМАТ 02 • VISUAL IDENTITY</span>
-
-                <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl lg:text-[34px] text-[#111113] leading-[1.18]">
-                  Візуальне пакування та AI-контент
-                </h3>
-
-                <div class="pt-4 pb-6 hairline-light-t hairline-light-b space-y-2">
-                  <div class="font-serif font-medium text-[42px] sm:text-[52px] leading-none text-[#111113]">
-                    від 4 200 ₴
-                  </div>
-                  <div class="micro-label text-[#57534C] pt-1">
-                    Індивідуальна візуальна система профілю
-                  </div>
-                </div>
-
-                <p class="text-xs sm:text-sm text-[#57534C] leading-relaxed">
-                  Формуємо цілісну естетику стрічки та AI-візуали, які виділяють ваш бренд без необхідності постійних дорогих фотосесій.
+        <!-- Tab Pane 3: AI + Дизайн -->
+        <div id="why-pane-3" class="tab-pane" role="tabpanel">
+          <div class="editorial-two-col">
+            <div class="col-primary">
+              <div>
+                <div class="big-index">03</div>
+                <h3 class="col-heading">AI + Дизайн: візуал студійного рівня без дорогих зйомок</h3>
+                <p class="col-copy">
+                  Поєднуємо генеративні AI-технології з професійним арт-дирекшном. Ви отримуєте атмосферні, унікальні візуали, обкладинки та графічні акценти швидше й вигідніше, ніж при організації класичних студійних фотосесій.
                 </p>
+              </div>
+              <div class="metric-footer">
+                <span class="eyebrow">РЕЗУЛЬТАТ ДЛЯ БІЗНЕСУ</span>
+                <div class="metric-headline">У 4 рази швидше оновлення візуалу без оренди студій</div>
+              </div>
+            </div>
 
-                <div class="pt-1">
-                  <a href="#brief"
-                     data-select-package="AI & Visual Контент"
-                     class="package-jump-trigger btn-ink inline-block w-full sm:w-auto px-8 py-4 text-[13px] font-semibold tracking-[0.03em] text-center">
-                    Обрати AI &amp; Visual
-                  </a>
+            <div class="col-secondary">
+              <div class="before-after-grid">
+                <div class="ba-box">
+                  <span class="ba-label">ДО: СКЛАДНИЙ ПРОДАКШН</span>
+                  <p>Тижні підготовки до зйомки, витрати на локацію та нестача свіжих кадрів для регулярного контенту.</p>
+                </div>
+                <div class="ba-box is-after">
+                  <span class="ba-label">ПІСЛЯ: AI &amp; ART DIRECTION</span>
+                  <p>Індивідуально згенеровані та доопрацьовані дизайнером візуали точно під настрій вашої ніші.</p>
                 </div>
               </div>
 
-              <div class="lg:col-span-7">
-                <div class="micro-label text-[#6E6A63] mb-4">
-                  СКЛАД ФОРМАТУ (04 ПУНКТИ)
+              <div class="light-point">
+                <span class="point-idx">01 /</span>
+                <div>
+                  <h4 class="point-title">Жодних стокових кліше</h4>
+                  <p class="point-desc">Кожен візуальний елемент створюється під палітру, фактуру та характер вашого бренду.</p>
                 </div>
-
-                <ul class="hairline-light-t">
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">01</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Розробка візуальної концепції профілю
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">02</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Серія унікальних AI-візуалів у стилі бренду
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">03</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Оформлення актуальних (Highlights) та обкладинок Reels
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">04</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Гайд по єдиній типографіці та кольорах
-                    </span>
-                  </li>
-                </ul>
               </div>
 
+              <div class="light-point">
+                <span class="point-idx">02 /</span>
+                <div>
+                  <h4 class="point-title">Ручна дизайнерська доробка</h4>
+                  <p class="point-desc">AI є інструментом, а фінальну якість, композицію та типографіку контролює продюсер.</p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <!-- SERVICE TAB 3: Комплекс Brand + Web -->
-          <div id="srv-panel-3" class="srv-tab-panel editorial-panel">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-
-              <div class="lg:col-span-5 space-y-6">
-                <span class="micro-label text-[#6E6A63]">ФОРМАТ 03 • ПОВНА ЕКОСИСТЕМА</span>
-
-                <h3 class="font-sans font-medium display-tight text-2xl sm:text-3xl lg:text-[34px] text-[#111113] leading-[1.18]">
-                  Повна екосистема: Профіль + Сайт-вітрина
-                </h3>
-
-                <div class="pt-4 pb-6 hairline-light-t hairline-light-b space-y-2">
-                  <div class="font-serif font-medium text-[44px] sm:text-[54px] leading-none text-[#111113]">
-                    6 900 ₴
-                  </div>
-                  <div class="micro-label text-[#57534C] pt-1">
-                    вигідніше, ніж окремо
-                  </div>
-                </div>
-
-                <p class="text-xs sm:text-sm text-[#57534C] leading-relaxed">
-                  Комплексне рішення під ключ: оновлюємо візуальне звучання Instagram і будуємо сайт-вітрину, що конвертує увагу в клієнтів.
+        <!-- Tab Pane 4: Швидкий запуск -->
+        <div id="why-pane-4" class="tab-pane" role="tabpanel">
+          <div class="editorial-two-col">
+            <div class="col-primary">
+              <div>
+                <div class="big-index">04</div>
+                <h3 class="col-heading">Швидкий запуск за 3–5 днів без технічного головного болю</h3>
+                <p class="col-copy">
+                  Чіткий спринт від короткого брифу до робочого посилання у шапці вашого Instagram. Вам не потрібно розбиратися в конструкторах, коді чи налаштуваннях хостингу — ми беремо весь цикл запуску на себе.
                 </p>
+              </div>
+              <div class="metric-footer">
+                <span class="eyebrow">РЕЗУЛЬТАТ ДЛЯ БІЗНЕСУ</span>
+                <div class="metric-headline">Готовий інструмент залучення клієнтів уже цього тижня</div>
+              </div>
+            </div>
 
-                <div class="pt-1">
-                  <a href="#brief"
-                     data-select-package="Комплекс Brand + Web"
-                     class="package-jump-trigger btn-ink inline-block w-full sm:w-auto px-8 py-4 text-[13px] font-semibold tracking-[0.03em] text-center">
-                    Обрати Комплекс
-                  </a>
+            <div class="col-secondary">
+              <div class="light-point">
+                <span class="point-idx">День 1 /</span>
+                <div>
+                  <h4 class="point-title">Бриф і структура пропозиції</h4>
+                  <p class="point-desc">Збираємо ваші послуги, ціни та переваги в логічну структуру, зрозумілу клієнту.</p>
                 </div>
               </div>
 
-              <div class="lg:col-span-7">
-                <div class="micro-label text-[#6E6A63] mb-4">
-                  СКЛАД ФОРМАТУ (04 ПУНКТИ)
+              <div class="light-point">
+                <span class="point-idx">День 2–3 /</span>
+                <div>
+                  <h4 class="point-title">Редакційний дизайн та мобільна верстка</h4>
+                  <p class="point-desc">Оформлюємо сторінку з бездоганним відображенням у вбудованому браузері Instagram та Safari.</p>
                 </div>
-
-                <ul class="hairline-light-t">
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">01</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Повне візуальне оновлення Instagram-профілю
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">02</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Створення сайту-вітрини під ключ
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">03</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Контент-воронка, що веде з публікацій на запис
-                    </span>
-                  </li>
-                  <li class="py-4 sm:py-5 hairline-light-b flex items-baseline gap-5">
-                    <span class="font-mono text-xs text-[#6E6A63] shrink-0">04</span>
-                    <span class="text-sm sm:text-[15px] font-medium text-[#111113]">
-                      Особистий супровід продюсера
-                    </span>
-                  </li>
-                </ul>
               </div>
 
+              <div class="light-point">
+                <span class="point-idx">День 4–5 /</span>
+                <div>
+                  <h4 class="point-title">Підключення та фінальний реліз</h4>
+                  <p class="point-desc">Налаштовуємо кнопки переходу в Telegram і Direct, тестуємо та передаємо готове посилання в біо.</p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         4. SECTION 02: INTERACTIVE TABS "ПОСЛУГИ ТА ФОРМАТИ" (OBSIDIAN)
+    ====================================================================== -->
+    <section id="services" class="band-obsidian section-block">
+      <div class="container">
+
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">02 / ПОСЛУГИ ТА ФОРМАТИ</span>
+            <h2 class="section-title">
+              Формати роботи <em>під ваше завдання</em>
+            </h2>
+          </div>
+          <p class="section-lead">
+            Оберіть напрямок, щоб переглянути склад робіт і одразу передати обраний формат у форму заявки.
+          </p>
+        </div>
+
+        <!-- 3 Interactive Service Tabs -->
+        <div class="service-tabs-bar" role="tablist" aria-label="Послуги та формати FIVISION LAB">
+          <button type="button" role="tab" aria-selected="true" data-service-target="srv-pane-1" class="service-tab-trigger is-active">
+            <span>01 / Сайт-вітрина</span>
+            <span class="eyebrow">3 100 ₴</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-service-target="srv-pane-2" class="service-tab-trigger">
+            <span>02 / AI &amp; Visual Контент</span>
+            <span class="eyebrow">ПІД ЗАПИТ</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false" data-service-target="srv-pane-3" class="service-tab-trigger">
+            <span>03 / Комплекс: Сайт + Профіль</span>
+            <span class="eyebrow">ПІД КЛЮЧ</span>
+          </button>
+        </div>
+
+        <!-- Service Pane 1: Сайт-вітрина -->
+        <div id="srv-pane-1" class="tab-pane is-active" role="tabpanel">
+          <div class="service-card">
+            <div class="service-col-left">
+              <div>
+                <span class="eyebrow">СПЕЦІАЛЬНА ЦІНА • ПІД КЛЮЧ</span>
+                <h3 class="service-heading">Сайт-вітрина</h3>
+                <p class="service-summary">
+                  Статусний односторінковий сайт для шапки профілю Instagram, який презентує ваші послуги, прайс і переваги та переводить відвідувачів у запис без зайвих переписок.
+                </p>
+
+                <div class="service-price-strip">
+                  <span class="price-old">6 500 ₴</span>
+                  <span class="service-price-val">3 100 ₴</span>
+                  <span class="discount-tag">−52% ЗАРАЗ</span>
+                </div>
+
+                <span class="eyebrow">ТЕРМІН РЕАЛІЗАЦІЇ: 3–5 РОБОЧИХ ДНІВ</span>
+              </div>
+
+              <a href="#order"
+                 data-select-service="Сайт-вітрина — 3 100 ₴"
+                 class="btn-primary js-select-service">
+                Обрати сайт за 3 100 ₴ →
+              </a>
+            </div>
+
+            <div class="service-col-right">
+              <span class="eyebrow">ЩО ВХОДИТЬ У ВАРТІСТЬ</span>
+              <ul class="deliverables">
+                <li>
+                  <span class="deliv-idx">01 /</span>
+                  <span>Адаптивний дизайн під мобільний трафік з Instagram, Safari та Android</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">02 /</span>
+                  <span>Чітка структура послуг, прайсу, акційних пропозицій та відповідей на запитання</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">03 /</span>
+                  <span>Прямі кнопки запису в Telegram та Instagram Direct із підготовленим текстом заявки</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">04 /</span>
+                  <span>Підключення домену або хостингу під ключ та передача готового посилання в біо</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Pane 2: AI & Visual Контент -->
+        <div id="srv-pane-2" class="tab-pane" role="tabpanel">
+          <div class="service-card">
+            <div class="service-col-left">
+              <div>
+                <span class="eyebrow">ВІЗУАЛЬНА СИСТЕМА БРЕНДУ</span>
+                <h3 class="service-heading">AI &amp; Visual Контент</h3>
+                <p class="service-summary">
+                  Редакційна візуальна упаковка вашого Instagram: авторські AI-візуали, естетичні обкладинки для Reels і Highlights та цілісна візуальна система, що підкреслює цінність вашого продукту.
+                </p>
+
+                <div class="service-price-strip">
+                  <span class="service-price-val" style="font-size: 36px;">Індивідуальний розрахунок</span>
+                </div>
+
+                <span class="eyebrow">ТЕРМІН РЕАЛІЗАЦІЇ: 4–6 РОБОЧИХ ДНІВ</span>
+              </div>
+
+              <a href="#order"
+                 data-select-service="AI & Visual Контент"
+                 class="btn-primary js-select-service">
+                Обрати AI &amp; Візуал →
+              </a>
+            </div>
+
+            <div class="service-col-right">
+              <span class="eyebrow">ЩО ВХОДИТЬ У ФОРМАТ</span>
+              <ul class="deliverables">
+                <li>
+                  <span class="deliv-idx">01 /</span>
+                  <span>Редакційні AI-візуали, створені спеціально під естетику та завдання вашого бренду</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">02 /</span>
+                  <span>Дизайн-система обкладинок для Reels та актуальних історій (Highlights)</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">03 /</span>
+                  <span>Візуальна концепція стрічки: палітра, типографіка, композиційні акценти</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">04 /</span>
+                  <span>Сенсове оформлення шапки профілю та рекомендації з ведення візуалу</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Pane 3: Комплекс: Сайт + Профіль -->
+        <div id="srv-pane-3" class="tab-pane" role="tabpanel">
+          <div class="service-card">
+            <div class="service-col-left">
+              <div>
+                <span class="eyebrow">ПОВНИЙ ЗАПУСК ПІД КЛЮЧ • СПЕЦУМОВИ</span>
+                <h3 class="service-heading">Комплекс: Сайт + Профіль</h3>
+                <p class="service-summary">
+                  Повне оновлення присутності в Instagram: візуальна упаковка профілю, система контенту та індивідуальний сайт-вітрина в єдиній редакційній стилістиці на вигідних пакетних умовах.
+                </p>
+
+                <div class="service-price-strip">
+                  <span class="service-price-val" style="font-size: 36px;">Спеціальні умови пакету</span>
+                </div>
+
+                <span class="eyebrow">ТЕРМІН РЕАЛІЗАЦІЇ: 6–8 РОБОЧИХ ДНІВ</span>
+              </div>
+
+              <a href="#order"
+                 data-select-service="Комплекс: Сайт + Профіль"
+                 class="btn-primary js-select-service">
+                Обрати комплекс →
+              </a>
+            </div>
+
+            <div class="service-col-right">
+              <span class="eyebrow">ЩО ВХОДИТЬ У КОМПЛЕКС</span>
+              <ul class="deliverables">
+                <li>
+                  <span class="deliv-idx">01 /</span>
+                  <span>Розробка та запуск сайту-вітрини під ключ з адаптацією під мобільний трафік</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">02 /</span>
+                  <span>Візуальна упаковка профілю: концепція стрічки, Highlights, обкладинки та AI-візуали</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">03 /</span>
+                  <span>Контент-система, яка органічно веде підписників із дописів на сайт-вітрину</span>
+                </li>
+                <li>
+                  <span class="deliv-idx">04 /</span>
+                  <span>Продюсерський супровід на кожному етапі та пріоритетна фіксація умов</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         5. FOUNDER NOTE / APPROACH SECTION (ALABASTER)
+    ====================================================================== -->
+    <section id="approach" class="band-alabaster section-block">
+      <div class="container">
+        <div class="quote-wrapper">
+          <span class="eyebrow">ПІДХІД АГЕНЦІЇ • FIVISION LAB</span>
+
+          <blockquote class="founder-quote">
+            «Клієнт приймає рішення за перші 7 секунд у вашому профілі. Коли візуал, сенси та зручний сайт-вітрина працюють як єдина система — вам більше не потрібно вмовляти купити.»
+          </blockquote>
+
+          <p class="founder-note-sub">
+            Ми працюємо прозоро та на зв’язку там, де зручно саме вам — ви можете написати напряму в Telegram або в Instagram Direct для швидкого обговорення вашого проєкту.
+          </p>
+
+          <div class="founder-footer">
+            <span class="founder-credit">СОФІЯ — VISUAL &amp; SMM PRODUCER • @FIVISION.LAB</span>
+            <div class="founder-socials">
+              <a href="https://t.me/fiya_grid" target="_blank" rel="noopener noreferrer">
+                Telegram (@fiya_grid) →
+              </a>
+              <a href="https://ig.me/m/fivision.lab" target="_blank" rel="noopener noreferrer">
+                Instagram Direct (@fivision.lab) →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================================
-         SECTION 03: ПРО АГЕНЦІЮ (EDITORIAL MANIFESTO & FOUNDER ON OBSIDIAN)
-    ========================================================================== -->
-    <section id="agency" class="reveal-block py-20 sm:py-28 lg:py-32 px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto">
+    <!-- =====================================================================
+         6. SECTION 03: INTERACTIVE ORDER BUILDER "#order" (OBSIDIAN)
+    ====================================================================== -->
+    <section id="order" class="band-obsidian section-block">
+      <div class="container">
 
-      <div class="mb-10 sm:mb-14">
-        <span class="micro-label text-[#DFD5C5] block">
-          03 / ПРО АГЕНЦІЮ
-        </span>
-      </div>
-
-      <!-- Large Editorial Manifesto Quote -->
-      <div class="max-w-4xl space-y-6 sm:space-y-8">
-        <blockquote class="font-serif italic font-normal text-[28px] leading-[1.24] sm:text-[42px] sm:leading-[1.2] lg:text-[48px] lg:leading-[1.18] text-[#F3F0EA]">
-          «Сильний візуал не просто прикрашає сторінку — він знімає сумніви клієнта ще до першого повідомлення.»
-        </blockquote>
-
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
-          <p class="font-mono text-xs tracking-[0.08em] text-[#DFD5C5]">
-            Софія — Visual &amp; SMM Producer, засновниця FIVISION LAB (@fivision.lab)
-          </p>
-          <a href="https://instagram.com/fivision.lab" target="_blank" rel="noopener noreferrer"
-             class="font-mono text-xs tracking-[0.1em] uppercase text-[#8A857C] hover:text-[#F3F0EA] transition-colors">
-            Відкрити профіль ↗
-          </a>
-        </div>
-      </div>
-
-      <!-- 3 Clean Architectural Columns with Hairline Top Borders -->
-      <div class="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
-
-        <div class="pt-6 hairline-dark-t space-y-3">
-          <span class="micro-label text-[#8A857C]">01. ПРИНЦИП</span>
-          <h3 class="font-sans font-medium text-lg text-[#F3F0EA]">
-            Точність замість шуму
-          </h3>
-          <p class="text-sm font-light text-[#8A857C] leading-[1.7]">
-            Ми прибираємо візуальне сміття, випадкові шрифти та перевантажені екрани. Кожен блок має конкретну мету — пояснити цінність послуги та привести до запису.
+        <div class="section-header">
+          <div>
+            <span class="eyebrow">03 / ЗАЯВКА НА СПІВПРАЦЮ</span>
+            <h2 class="section-title">
+              Сформуйте запит <em>за 30 секунд</em>
+            </h2>
+          </div>
+          <p class="section-lead">
+            Оберіть формат і сферу бізнесу — текст заявки сформується автоматично і буде готовий до відправки в один клік.
           </p>
         </div>
 
-        <div class="pt-6 hairline-dark-t space-y-3">
-          <span class="micro-label text-[#8A857C]">02. АРХІТЕКТУРА</span>
-          <h3 class="font-sans font-medium text-lg text-[#F3F0EA]">
-            Дизайн під мобільний трафік
-          </h3>
-          <p class="text-sm font-light text-[#8A857C] leading-[1.7]">
-            Понад 90% аудиторії відкриває сайт прямо зі смартфону з шапки Instagram. Ми проєктуємо інтерфейси з журнальною зручністю для одного великого пальця.
-          </p>
-        </div>
+        <div class="order-grid">
 
-        <div class="pt-6 hairline-dark-t space-y-3">
-          <span class="micro-label text-[#8A857C]">03. РЕЗУЛЬТАТ</span>
-          <h3 class="font-sans font-medium text-lg text-[#F3F0EA]">
-            Фокус на реальних записах
-          </h3>
-          <p class="text-sm font-light text-[#8A857C] leading-[1.7]">
-            Краса без конверсії не працює на бізнес. Ми поєднуємо високу естетику з продуманими тригерами довіри, щоб клієнт обирав саме вас без довгих вагань.
-          </p>
-        </div>
+          <!-- Left Column: Interactive Selectors -->
+          <div class="order-steps">
+            <div>
+              <span class="eyebrow">КРОК 01 / ОБЕРІТЬ ФОРМАТ</span>
+              <div class="selector-group" id="service-selector">
+                <button type="button" data-service="Сайт-вітрина — 3 100 ₴" class="choice-btn is-active">
+                  Сайт-вітрина — 3 100 ₴
+                </button>
+                <button type="button" data-service="AI & Visual Контент" class="choice-btn">
+                  AI &amp; Visual Контент
+                </button>
+                <button type="button" data-service="Комплекс: Сайт + Профіль" class="choice-btn">
+                  Комплекс: Сайт + Профіль
+                </button>
+              </div>
+            </div>
 
-      </div>
+            <div>
+              <span class="eyebrow">КРОК 02 / СФЕРА ВАШОГО БІЗНЕСУ</span>
+              <div class="selector-group" id="niche-selector">
+                <button type="button" data-niche="Б'юті / Косметологія" class="choice-btn is-active">
+                  Б'юті / Косметологія
+                </button>
+                <button type="button" data-niche="Локальний сервіс" class="choice-btn">
+                  Локальний сервіс
+                </button>
+                <button type="button" data-niche="Експерт / Навчання" class="choice-btn">
+                  Експерт / Навчання
+                </button>
+                <button type="button" data-niche="Шоурум / Бренд" class="choice-btn">
+                  Шоурум / Бренд
+                </button>
+                <button type="button" data-niche="Інша сфера" class="choice-btn">
+                  Інша сфера
+                </button>
+              </div>
+            </div>
 
-    </section>
-
-    <!-- =========================================================================
-         SECTION 04: ЗАЛИШИТИ ЗАЯВКУ (INTERACTIVE BRIEF & DIRECT BOOKING)
-    ========================================================================== -->
-    <section id="brief" class="reveal-block py-20 sm:py-28 lg:py-32 px-5 sm:px-8 lg:px-12 max-w-6xl mx-auto hairline-dark-t">
-
-      <div class="mb-12 sm:mb-16 max-w-2xl">
-        <span class="micro-label text-[#DFD5C5] block mb-3">
-          04 / ЗАЛИШИТИ ЗАЯВКУ
-        </span>
-        <h2 class="font-sans font-medium display-tight text-2xl sm:text-4xl lg:text-[42px] text-[#F3F0EA] leading-[1.15]">
-          Сформуйте запит <span class="font-serif italic font-normal text-[#DFD5C5]">за 30 секунд</span>
-        </h2>
-        <p class="mt-4 text-sm sm:text-[15px] font-light text-[#8A857C] leading-relaxed">
-          Оберіть формат співпраці та вашу сферу — система автоматично сформує структуроване повідомлення для швидкого старту в Direct.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-
-        <!-- Left Column: Interactive Brief Controls -->
-        <div class="lg:col-span-7 space-y-9">
-
-          <!-- Step 1: Формат співпраці -->
-          <div class="space-y-3.5">
-            <label class="micro-label text-[#8A857C] block">
-              01 • ФОРМАТ СПІВПРАЦІ
-            </label>
-            <div class="flex flex-wrap gap-2.5">
-              <button type="button"
-                      data-package="Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)"
-                      class="package-pill brief-pill is-selected px-4 py-3 text-xs sm:text-[13px] font-medium text-left">
-                Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)
-              </button>
-              <button type="button"
-                      data-package="AI & Visual Контент"
-                      class="package-pill brief-pill px-4 py-3 text-xs sm:text-[13px] font-medium text-left">
-                AI &amp; Visual Контент
-              </button>
-              <button type="button"
-                      data-package="Комплекс Brand + Web"
-                      class="package-pill brief-pill px-4 py-3 text-xs sm:text-[13px] font-medium text-left">
-                Комплекс Brand + Web
-              </button>
+            <div>
+              <label for="client-name" class="eyebrow">КРОК 03 / ВАШЕ ІМ’Я АБО INSTAGRAM (ЗА БАЖАННЯМ)</label>
+              <input
+                id="client-name"
+                type="text"
+                class="client-input"
+                placeholder="@your_instagram або Олена"
+                autocomplete="off"
+              />
             </div>
           </div>
 
-          <!-- Step 2: Сфера бізнесу -->
-          <div class="space-y-3.5">
-            <label class="micro-label text-[#8A857C] block">
-              02 • СФЕРА БІЗНЕСУ
-            </label>
-            <div class="flex flex-wrap gap-2.5">
-              <button type="button"
-                      data-niche="Б'юті / Косметологія"
-                      class="niche-pill brief-pill is-selected px-4 py-3 text-xs sm:text-[13px] font-medium">
-                Б’юті / Косметологія
-              </button>
-              <button type="button"
-                      data-niche="Локальний бізнес / Студія"
-                      class="niche-pill brief-pill px-4 py-3 text-xs sm:text-[13px] font-medium">
-                Локальний бізнес / Студія
-              </button>
-              <button type="button"
-                      data-niche="Експерт / Послуги"
-                      class="niche-pill brief-pill px-4 py-3 text-xs sm:text-[13px] font-medium">
-                Експерт / Послуги
-              </button>
-              <button type="button"
-                      data-niche="Інша ніша"
-                      class="niche-pill brief-pill px-4 py-3 text-xs sm:text-[13px] font-medium">
-                Інша ніша
-              </button>
+          <!-- Right Column: Live Brief Preview & Action Links -->
+          <div class="brief-card">
+            <div class="brief-card-head">
+              <span class="eyebrow">ТЕКСТ ВАШОЇ ЗАЯВКИ</span>
+              <span class="eyebrow">НАТИСНІТЬ ЩОБ СКОПІЮВАТИ</span>
             </div>
-          </div>
 
-          <!-- Step 3: Optional Input for Instagram Handle or Name -->
-          <div class="space-y-3">
-            <label for="client-handle-input" class="micro-label text-[#8A857C] block">
-              03 • ВАШ INSTAGRAM НІКНЕЙМ АБО ІМ’Я (НЕОБОВ’ЯЗКОВО)
-            </label>
-            <input id="client-handle-input"
-                   type="text"
-                   placeholder="@your_instagram або Олена"
-                   class="w-full px-4 py-3.5 bg-[#121214] hairline-dark-all rounded-[2px] text-sm text-[#F3F0EA] placeholder:text-[#5C5852] focus:outline-none focus:border-[#DFD5C5] transition-colors" />
-          </div>
+            <div id="brief-preview" class="brief-preview-box" role="button" tabindex="0" title="Натисніть, щоб скопіювати текст заявки">Вітаю, Софіє! Хочу обговорити співпрацю з FIVISION LAB:
 
-        </div>
+Формат: Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)
+Сфера бізнесу: Б'юті / Косметологія
 
-        <!-- Right Column: Live Formatted Message Preview & Direct Action -->
-        <div class="lg:col-span-5 hairline-dark-all bg-[#121214] p-6 sm:p-8 space-y-6">
+Підкажіть, будь ласка, найближчі вільні дати для старту.</div>
 
-          <div class="flex items-center justify-between hairline-dark-b pb-4">
-            <span class="micro-label text-[#DFD5C5]">ТЕКСТ ЗАЯВКИ ДЛЯ DIRECT</span>
-            <span class="font-mono text-[11px] text-[#8A857C]">UA</span>
-          </div>
+            <p class="messenger-note">
+              Можна написати будь-де: у <strong>Telegram (@fiya_grid)</strong> текст одразу підставиться в рядок повідомлення, а в <strong>Instagram Direct (@fivision.lab)</strong> — автоматично скопіюється для швидкої вставки.
+            </p>
 
-          <!-- Live Preview Text -->
-          <pre id="brief-preview-text" class="font-sans text-[13.5px] sm:text-sm font-normal text-[#F3F0EA] whitespace-pre-wrap leading-[1.7]"></pre>
+            <div id="copy-status" class="status-banner" role="status" aria-live="polite"></div>
 
-          <!-- Elegant Inline Confirmation Banner -->
-          <div id="copy-confirmation-banner" role="status" aria-live="polite"
-               class="hidden px-4 py-3 bg-[#F3F0EA] text-[#0B0B0C] rounded-[2px] font-mono text-[11px] tracking-[0.06em]">
-            Текст заявки підготовлено — вставте його у відкритий чат @fivision.lab.
-          </div>
+            <div class="cta-stack">
+              <a id="tg-link"
+                 href="https://t.me/fiya_grid?text=%D0%92%D1%96%D1%82%D0%B0%D1%8E%2C%20%D0%A1%D0%BE%D1%84%D1%96%D1%94!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D0%B8%20%D1%81%D0%BF%D1%96%D0%B2%D0%BF%D1%80%D0%B0%D1%86%D1%8E%20%D0%B7%20FIVISION%20LAB%3A%0A%0A%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%3A%20%D0%A1%D0%B0%D0%B9%D1%82-%D0%B2%D1%96%D1%82%D1%80%D0%B8%D0%BD%D0%B0%20%E2%80%94%203%20100%20%E2%82%B4%20(%D0%B7%D0%B0%D0%BC%D1%96%D1%81%D1%82%D1%8C%206%20500%20%E2%82%B4)%0A%D0%A1%D1%84%D0%B5%D1%80%D0%B0%20%D0%B1%D1%96%D0%B7%D0%BD%D0%B5%D1%81%D1%83%3A%20%D0%91'%D1%8E%D1%82%D1%96%20%2F%20%D0%9A%D0%BE%D1%81%D0%BC%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%8F%0A%0A%D0%9F%D1%96%D0%B4%D0%BA%D0%B0%D0%B6%D1%96%D1%82%D1%8C%2C%20%D0%B1%D1%83%D0%B4%D1%8C%20%D0%BB%D0%B0%D1%81%D0%BA%D0%B0%2C%20%D0%BD%D0%B0%D0%B9%D0%B1%D0%BB%D0%B8%D0%B6%D1%87%D1%96%20%D0%B2%D1%96%D0%BB%D1%8C%D0%BD%D1%96%20%D0%B4%D0%B0%D1%82%D0%B8%20%D0%B4%D0%BB%D1%8F%20%D1%81%D1%82%D0%B0%D1%80%D1%82%D1%83."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn-primary">
+                Надіслати в Telegram (@fiya_grid) →
+              </a>
 
-          <!-- Primary Direct Action -->
-          <div class="space-y-3 pt-2">
-            <a id="send-direct-btn"
-               href="https://ig.me/m/fivision.lab"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn-alabaster block w-full py-4 px-5 text-[13px] font-semibold tracking-[0.02em] text-center">
-              Надіслати заявку в Direct →
-            </a>
+              <a id="ig-link"
+                 href="https://ig.me/m/fivision.lab"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="btn-secondary">
+                Написати в Instagram Direct (@fivision.lab) →
+              </a>
+            </div>
 
-            <p class="font-mono text-[11px] leading-relaxed text-[#8A857C] text-center">
-              Відкриється чат @fivision.lab — текст заявки вже підготовлено для вставки
+            <p class="brief-foot-note">
+              Відповідаємо швидко в обох месенджерах • Без нав’язливих дзвінків
             </p>
           </div>
 
@@ -1087,135 +824,282 @@
 
   </main>
 
-  <!-- =========================================================================
-       MINIMALIST FOOTER
-  ========================================================================== -->
-  <footer class="hairline-dark-t py-10 sm:py-12 px-5 sm:px-8 lg:px-12">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-
-      <div class="flex items-center gap-3.5">
-        <div class="w-8 h-8 hairline-dark-all rounded-[2px] flex items-center justify-center bg-[#121214]">
-          <svg width="18" height="18" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M6.5 5.5V22.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-            <path d="M6.5 5.5H18.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-            <path d="M6.5 13.5H15.5" stroke="#DFD5C5" stroke-width="1.65" stroke-linecap="square"/>
-            <path d="M13.5 9.5V22.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-            <path d="M13.5 22.5H22.5" stroke="#F3F0EA" stroke-width="1.65" stroke-linecap="square"/>
-          </svg>
-        </div>
-        <span class="font-sans text-xs tracking-[0.14em] uppercase text-[#F3F0EA]">
-          FIVISION LAB — AI &amp; Content агенція
-        </span>
+  <!-- =======================================================================
+       7. FOOTER
+  ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-meta">
+        FIVISION LAB • AI &amp; CONTENT AGENCY •
+        <a href="https://t.me/fiya_grid" target="_blank" rel="noopener noreferrer">TELEGRAM (@FIYA_GRID)</a> •
+        <a href="https://ig.me/m/fivision.lab" target="_blank" rel="noopener noreferrer">INSTAGRAM (@FIVISION.LAB)</a>
       </div>
-
-      <div class="flex items-center gap-6 font-mono text-xs text-[#8A857C]">
-        <a href="https://instagram.com/fivision.lab" target="_blank" rel="noopener noreferrer"
-           class="hover:text-[#DFD5C5] transition-colors">
-          @fivision.lab
-        </a>
-        <span>© 2026</span>
+      <div class="footer-meta">
+        © 2026
       </div>
-
     </div>
   </footer>
 
   <!-- =========================================================================
-       VANILLA JAVASCRIPT: SLIDING TABS, BRIEF CONSTRUCTOR & REVEAL
+       ROCK-SOLID VANILLA JAVASCRIPT (ZERO EXTERNAL DEPENDENCIES)
   ========================================================================== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    (function () {
+      'use strict';
 
-      /**
-       * 1. Reusable Sliding Underline Tab Controller
-       * Recalculates indicator position cleanly on click, font load, and resize.
-       */
-      function setupEditorialTabs(stripId, indicatorId, btnSelector, panelSelector) {
-        const strip = document.getElementById(stripId);
-        const indicator = document.getElementById(indicatorId);
-        if (!strip || !indicator) return;
-
-        const buttons = Array.from(strip.querySelectorAll(btnSelector));
-        const panels = Array.from(document.querySelectorAll(panelSelector));
-
-        function moveIndicator(activeBtn) {
-          if (!activeBtn) return;
-          indicator.style.width = `${activeBtn.offsetWidth}px`;
-          indicator.style.transform = `translateX(${activeBtn.offsetLeft}px)`;
-        }
-
-        function selectTab(btn) {
-          const targetId = btn.getAttribute('data-target');
-
-          buttons.forEach((b) => {
-            const active = b === btn;
-            b.classList.toggle('is-active', active);
-            b.setAttribute('aria-selected', active ? 'true' : 'false');
-          });
-
-          panels.forEach((panel) => {
-            panel.classList.toggle('is-active', panel.id === targetId);
-          });
-
-          moveIndicator(btn);
-        }
-
-        buttons.forEach((btn) => {
-          btn.addEventListener('click', () => selectTab(btn));
-        });
-
-        const initialBtn = buttons.find((b) => b.classList.contains('is-active')) || buttons[0];
-        if (initialBtn) {
-          requestAnimationFrame(() => moveIndicator(initialBtn));
-        }
-
-        window.addEventListener('resize', () => {
-          const current = buttons.find((b) => b.classList.contains('is-active'));
-          moveIndicator(current);
-        });
-
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(() => {
-            const current = buttons.find((b) => b.classList.contains('is-active'));
-            moveIndicator(current);
+      function initFivisionApp() {
+        /* -------------------------------------------------------------------
+           1. Smooth Anchor Scrolling for Internal Section Links
+        -------------------------------------------------------------------- */
+        var internalLinks = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < internalLinks.length; i++) {
+          internalLinks[i].addEventListener('click', function (e) {
+            var hash = this.getAttribute('href');
+            if (!hash || hash === '#') return;
+            var targetEl = document.querySelector(hash);
+            if (targetEl) {
+              e.preventDefault();
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
           });
         }
-      }
 
-      setupEditorialTabs('why-tabstrip', 'why-indicator', '.why-tab-btn', '.why-tab-panel');
-      setupEditorialTabs('services-tabstrip', 'services-indicator', '.srv-tab-btn', '.srv-tab-panel');
+        /* -------------------------------------------------------------------
+           2. Section 01 Tabs ("01 / Чому йдуть до нас")
+        -------------------------------------------------------------------- */
+        var whyTriggers = document.querySelectorAll('.why-tab-trigger');
+        for (var w = 0; w < whyTriggers.length; w++) {
+          whyTriggers[w].addEventListener('click', function () {
+            var targetId = this.getAttribute('data-why-target');
+            if (!targetId) return;
 
-      /**
-       * 2. Interactive Brief & Direct Booking Constructor
-       */
-      const briefState = {
-        pkg: 'Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)',
-        niche: "Б'юті / Косметологія",
-        handle: ''
-      };
+            for (var j = 0; j < whyTriggers.length; j++) {
+              var isSelected = whyTriggers[j] === this;
+              whyTriggers[j].classList.toggle('is-active', isSelected);
+              whyTriggers[j].setAttribute('aria-selected', isSelected ? 'true' : 'false');
+            }
 
-      const packagePills = document.querySelectorAll('.package-pill');
-      const nichePills = document.querySelectorAll('.niche-pill');
-      const handleInput = document.getElementById('client-handle-input');
-      const previewEl = document.getElementById('brief-preview-text');
-      const bannerEl = document.getElementById('copy-confirmation-banner');
-      const sendDirectBtn = document.getElementById('send-direct-btn');
-
-      function renderBriefPreview() {
-// ... existing code ... -->
-        if (bannerEl) {
-          bannerEl.classList.remove('hidden');
-          clearTimeout(bannerEl._hideTimer);
-          bannerEl._hideTimer = setTimeout(() => {
-            bannerEl.classList.add('hidden');
-          }, 5000);
+            var whyPanes = document.querySelectorAll('#why .tab-pane');
+            for (var k = 0; k < whyPanes.length; k++) {
+              whyPanes[k].classList.toggle('is-active', whyPanes[k].id === targetId);
+            }
+          });
         }
+
+        /* -------------------------------------------------------------------
+           3. Section 02 Tabs ("02 / Послуги та формати")
+        -------------------------------------------------------------------- */
+        var serviceTriggers = document.querySelectorAll('.service-tab-trigger');
+        for (var s = 0; s < serviceTriggers.length; s++) {
+          serviceTriggers[s].addEventListener('click', function () {
+            var targetId = this.getAttribute('data-service-target');
+            if (!targetId) return;
+
+            for (var j = 0; j < serviceTriggers.length; j++) {
+              var isSelected = serviceTriggers[j] === this;
+              serviceTriggers[j].classList.toggle('is-active', isSelected);
+              serviceTriggers[j].setAttribute('aria-selected', isSelected ? 'true' : 'false');
+            }
+
+            var servicePanes = document.querySelectorAll('#services .tab-pane');
+            for (var k = 0; k < servicePanes.length; k++) {
+              servicePanes[k].classList.toggle('is-active', servicePanes[k].id === targetId);
+            }
+          });
+        }
+
+        /* -------------------------------------------------------------------
+           4. Interactive Order Builder & Messaging Links
+        -------------------------------------------------------------------- */
+        var state = {
+          service: 'Сайт-вітрина — 3 100 ₴',
+          niche: "Б'юті / Косметологія",
+          clientName: ''
+        };
+
+        var serviceButtons = document.querySelectorAll('#service-selector .choice-btn');
+        var nicheButtons = document.querySelectorAll('#niche-selector .choice-btn');
+        var clientInput = document.getElementById('client-name');
+        var briefPreview = document.getElementById('brief-preview');
+        var tgLink = document.getElementById('tg-link');
+        var igLink = document.getElementById('ig-link');
+        var copyStatus = document.getElementById('copy-status');
+        var statusTimer = null;
+
+        function buildBriefText() {
+          var serviceLine = state.service;
+          if (state.service === 'Сайт-вітрина — 3 100 ₴') {
+            serviceLine = 'Сайт-вітрина — 3 100 ₴ (замість 6 500 ₴)';
+          }
+
+          var text = 'Вітаю, Софіє! Хочу обговорити співпрацю з FIVISION LAB:\n\n' +
+                     'Формат: ' + serviceLine + '\n' +
+                     'Сфера бізнесу: ' + state.niche;
+
+          var trimmedName = state.clientName ? state.clientName.trim() : '';
+          if (trimmedName) {
+            text += '\nКонтакт / Instagram: ' + trimmedName;
+          }
+
+          text += '\n\nПідкажіть, будь ласка, найближчі вільні дати для старту.';
+          return text;
+        }
+
+        function updateBrief() {
+          var message = buildBriefText();
+          if (briefPreview) {
+            briefPreview.textContent = message;
+          }
+          if (tgLink) {
+            tgLink.setAttribute('href', 'https://t.me/fiya_grid?text=' + encodeURIComponent(message));
+          }
+        }
+
+        function setActiveService(serviceValue) {
+          state.service = serviceValue;
+          for (var i = 0; i < serviceButtons.length; i++) {
+            var btnService = serviceButtons[i].getAttribute('data-service');
+            serviceButtons[i].classList.toggle('is-active', btnService === serviceValue);
+          }
+          updateBrief();
+        }
+
+        function setActiveNiche(nicheValue) {
+          state.niche = nicheValue;
+          for (var i = 0; i < nicheButtons.length; i++) {
+            var btnNiche = nicheButtons[i].getAttribute('data-niche');
+            nicheButtons[i].classList.toggle('is-active', btnNiche === nicheValue);
+          }
+          updateBrief();
+        }
+
+        function copyTextSilently(text) {
+          try {
+            var tempTextarea = document.createElement('textarea');
+            tempTextarea.value = text;
+            tempTextarea.setAttribute('readonly', '');
+            tempTextarea.style.position = 'fixed';
+            tempTextarea.style.top = '0';
+            tempTextarea.style.left = '-9999px';
+            tempTextarea.style.opacity = '0';
+            document.body.appendChild(tempTextarea);
+            tempTextarea.focus();
+            tempTextarea.select();
+            tempTextarea.setSelectionRange(0, tempTextarea.value.length);
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+          } catch (err) {
+            /* Ignore execCommand restriction if any */
+          }
+
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            try {
+              navigator.clipboard.writeText(text).catch(function () {});
+            } catch (err) {
+              /* Ignore clipboard permission restriction in iFrames */
+            }
+          }
+        }
+
+        function showStatus(message) {
+          if (!copyStatus) return;
+          copyStatus.textContent = message;
+          copyStatus.classList.add('is-visible');
+          if (statusTimer) {
+            clearTimeout(statusTimer);
+          }
+          statusTimer = setTimeout(function () {
+            copyStatus.classList.remove('is-visible');
+          }, 6000);
+        }
+
+        /* Service selector buttons */
+        for (var sb = 0; sb < serviceButtons.length; sb++) {
+          serviceButtons[sb].addEventListener('click', function () {
+            var val = this.getAttribute('data-service');
+            if (val) {
+              setActiveService(val);
+            }
+          });
+        }
+
+        /* Niche selector buttons */
+        for (var nb = 0; nb < nicheButtons.length; nb++) {
+          nicheButtons[nb].addEventListener('click', function () {
+            var val = this.getAttribute('data-niche');
+            if (val) {
+              setActiveNiche(val);
+            }
+          });
+        }
+
+        /* Client name / Instagram handle input */
+        if (clientInput) {
+          clientInput.addEventListener('input', function () {
+            state.clientName = this.value;
+            updateBrief();
+          });
+        }
+
+        /* Preset service buttons from Hero & Service tabs */
+        var presetLinks = document.querySelectorAll('.js-select-service');
+        for (var pl = 0; pl < presetLinks.length; pl++) {
+          presetLinks[pl].addEventListener('click', function (e) {
+            var chosenService = this.getAttribute('data-select-service');
+            if (chosenService) {
+              setActiveService(chosenService);
+            }
+            var orderSection = document.getElementById('order');
+            if (orderSection) {
+              e.preventDefault();
+              orderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        }
+
+        /* Click on brief preview box itself copies the text */
+        if (briefPreview) {
+          briefPreview.addEventListener('click', function () {
+            copyTextSilently(buildBriefText());
+            showStatus('Текст заявки скопійовано в буфер обміну');
+          });
+          briefPreview.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              copyTextSilently(buildBriefText());
+              showStatus('Текст заявки скопійовано в буфер обміну');
+            }
+          });
+        }
+
+        /* Telegram CTA link: ensure href is fresh, copy silently, allow native navigation */
+        if (tgLink) {
+          tgLink.addEventListener('click', function () {
+            var currentText = buildBriefText();
+            tgLink.setAttribute('href', 'https://t.me/fiya_grid?text=' + encodeURIComponent(currentText));
+            copyTextSilently(currentText);
+            showStatus('Текст підставлено у повідомлення Telegram (@fiya_grid)');
+          });
+        }
+
+        /* Instagram Direct CTA link: copy text silently, show status, allow native navigation */
+        if (igLink) {
+          igLink.addEventListener('click', function () {
+            copyTextSilently(buildBriefText());
+            showStatus('Текст скопійовано — вставте його у відкритому чаті Direct');
+          });
+        }
+
+        /* Initialize brief & Telegram link immediately on load */
+        updateBrief();
       }
 
-      if (sendDirectBtn) {
-        sendDirectBtn.addEventListener('click', () => {
-          copyBriefToClipboard();
-        });
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFivisionApp);
+      } else {
+        initFivisionApp();
       }
-
-      renderBriefPreview();
-// ... existing code ... -->
+    })();
+  </script>
+</body>
+</html>
